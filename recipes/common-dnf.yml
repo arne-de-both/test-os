@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+type: dnf
+repos:
+  copr:
+    - solopasha/hyprland
+install:
+  packages:
+    - hyprland
+    - hypridle
+    - hyprlock
+    - waybar
+    - waypaper
+    - xdg-desktop-portal-hyprland
+    - zsh
+    - hyprpolkitagent
+remove:
+  packages:
+    # example: removing firefox (in favor of the flatpak)
+    # "firefox" is the main package, "firefox-langpacks" is a dependency
+    - firefox
+    - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
