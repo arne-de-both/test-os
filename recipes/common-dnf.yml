@@ -5,6 +5,7 @@ type: dnf
 repos:
   copr:
     - solopasha/hyprland
+    - errornointernet/walker
 install:
   packages:
     - hyprland
@@ -15,6 +16,7 @@ install:
     - xdg-desktop-portal-hyprland
     - zsh
     - hyprpolkitagent
+    - walker
 remove:
   packages:
     # example: removing firefox (in favor of the flatpak)
