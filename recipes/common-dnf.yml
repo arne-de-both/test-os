@@ -5,7 +5,6 @@ type: dnf
 repos:
   copr:
     - solopasha/hyprland
-    - errornointernet/walker
 install:
   packages:
     - hyprland
@@ -16,7 +15,7 @@ install:
     - xdg-desktop-portal-hyprland
     - zsh
     - hyprpolkitagent
-    - walker
+    - ulauncher
     - mako
 remove:
   packages:
