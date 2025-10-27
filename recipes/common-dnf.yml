@@ -13,10 +13,13 @@ install:
     - waybar
     - waypaper
     - xdg-desktop-portal-hyprland
-    - zsh
-    - hyprpolkitagent
     - rofi
     - mako
+    - mate-polkit
+    - nwg-drawer
+    - nwg-look
+    - gtk-murrine-engine
+    - zsh
 remove:
   packages:
     # example: removing firefox (in favor of the flatpak)
