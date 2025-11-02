@@ -21,6 +21,7 @@ install:
     - gtk-murrine-engine
     - zsh
     - gparted
+    - NetworkManager-tui
 remove:
   packages:
     # example: removing firefox (in favor of the flatpak)
