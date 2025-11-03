@@ -10,6 +10,7 @@ install:
     - hyprland
     - hypridle
     - hyprlock
+    - hyprland-qtutils
     - waybar
     - waypaper
     - xdg-desktop-portal-hyprland
