@@ -6,7 +6,7 @@ name: work-hyperland
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bluefin-dx-nvidia-open
+base-image: ghcr.io/ublue-os/bazzite-dx-nvidia-gnome
 image-version: stable # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -20,9 +20,9 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: dnf
-    install:
-      packages:
-        - https://links.fortinet.com/forticlient/rhel/vpnagent
+  # - type: dnf
+  #   install:
+  #     packages:
+  #       - https://links.fortinet.com/forticlient/rhel/vpnagent
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
