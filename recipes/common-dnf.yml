@@ -5,6 +5,7 @@ type: dnf
 repos:
   copr:
     - solopasha/hyprland
+    - tofik/nwg-shell
 install:
   packages:
     - hyprland
@@ -19,6 +20,8 @@ install:
     - mate-polkit
     - nwg-drawer
     - nwg-look
+    - nwg-displays
+    - kanshi
     - gtk-murrine-engine
     - zsh
     - gparted
