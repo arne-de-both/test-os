@@ -10,7 +10,7 @@ install:
   packages:
     - hyprland
     - hypridle
-    - hyprlock
+    - swaylock
     - hyprland-qtutils
     - waybar
     - waypaper
