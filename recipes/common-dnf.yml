@@ -6,11 +6,12 @@ repos:
   copr:
     - solopasha/hyprland
     - tofik/nwg-shell
+    - eddsalkield/swaylock-effects
 install:
   packages:
     - hyprland
     - hypridle
-    - swaylock
+    - swaylock-effects
     - hyprland-qtutils
     - waybar
     - waypaper
