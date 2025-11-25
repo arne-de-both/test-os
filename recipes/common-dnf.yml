@@ -12,6 +12,7 @@ install:
     - hyprland
     - hypridle
     - swaylock-effects
+    - hyprlock
     - hyprland-qtutils
     - waybar
     - waypaper
