@@ -6,12 +6,10 @@ repos:
   copr:
     - lionheartp/Hyprland
     - tofik/nwg-shell
-    - eddsalkield/swaylock-effects
 install:
   packages:
     - hyprland
     - hypridle
-    - swaylock-effects
     - hyprlock
     - hyprland-guiutils
     - waybar
@@ -27,7 +25,11 @@ install:
     - gtk-murrine-engine
     - zsh
     - gparted
-
-# remove:
-#   packages:
-#     - firefox
+    - NetworkManager-tui
+remove:
+  packages:
+    # example: removing firefox (in favor of the flatpak)
+    # "firefox" is the main package, "firefox-langpacks" is a dependency
+    - firefox
+    - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+    - wofi
