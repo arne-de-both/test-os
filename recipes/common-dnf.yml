@@ -16,6 +16,7 @@ install:
     - hyprland-guiutils
     - waybar
     - waypaper
+    - hyprpaper
     - xdg-desktop-portal-hyprland
     - rofi
     - mako
