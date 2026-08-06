@@ -31,6 +31,21 @@ jobs:
           # - recipe-nvidia.yml
           - work-recipe.yml
     steps:
+      # The self-hosted quantus-builders runner (minimal actions-runner image)
+      # lacks `envsubst`. sigstore/cosign-installer started requiring it on
+      # 2026-07-07 (SHA 6f9f177), which broke the nested cosign step in
+      # blue-build/github-action@v1 with "envsubst: command not found" (exit 127).
+      # See overlord/missions/bluebuild-upgrade/findings.md.
+      - name: Ensure envsubst is available (gettext-base)
+        run: |
+          if command -v envsubst >/dev/null 2>&1; then
+            echo "envsubst already present; nothing to do"
+          elif [ "$(id -u)" -eq 0 ]; then
+            apt-get update && apt-get install -y --no-install-recommends gettext-base
+          else
+            sudo apt-get update && sudo apt-get install -y --no-install-recommends gettext-base
+          fi
+
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
         uses: blue-build/github-action@v1
