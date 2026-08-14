@@ -14,6 +14,14 @@ image-version: stable # latest is also supported if you want new updates ASAP
 modules:
   - from-file: common-dnf.yml
   - from-file: common-flatpaks.yml
+
+  # Work machine is an HP ZBook — Bazzite's Framework-laptop fan controller
+  # can't work here and its system-sleep hook errors on every suspend.
+  # Work-image only: the personal recipe may land on Framework hardware.
+  - type: dnf
+    remove:
+      packages:
+        - fw-fanctrl
   
   - type: files
     files:
