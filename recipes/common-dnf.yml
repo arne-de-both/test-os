@@ -29,6 +29,21 @@ install:
     - zsh
     - gparted
 
+# WORKAROUND: the Bazzite base image swaps Fedora's wireplumber for
+# terra-wireplumber (terra-extras repo), which is stuck on 0.5.17.
+# WirePlumber 0.5.17 has an HFP regression on Linux 7.2: headset mic capture
+# dies ~0.5s after an A2DP<->HFP profile switch (wireplumber issue #1013,
+# fixed by MR !897, released in 0.5.18; Fedora 44 updates has 0.5.18-1.fc44
+# since 2026-10-01). Swap back to Fedora's package.
+# Expiry: delete this block once the Bazzite base ships wireplumber >= 0.5.18
+# (its Containerfile no longer runs `dnf5 swap ... wireplumber terra-wireplumber`).
+replace:
+  - from-repo: updates
+    allow-erasing: true
+    packages:
+      - old: terra-wireplumber
+        new: wireplumber
+
 # remove:
 #   packages:
 #     - firefox
