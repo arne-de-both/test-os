@@ -17,7 +17,10 @@ concurrency:
 jobs:
   bluebuild:
     name: Build Custom Image
-    runs-on: quantus-builders
+    # GitHub-hosted, not the self-hosted quantus-builders runner: on qcluster the
+    # dind build saturated the node NVMe that holds Longhorn replicas and etcd
+    # (talos-cluster OPERATIONS.md, 2026-11-02/03 entry). Public repo, so free.
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -36,6 +39,7 @@ jobs:
       # 2026-07-07 (SHA 6f9f177), which broke the nested cosign step in
       # blue-build/github-action@v1 with "envsubst: command not found" (exit 127).
       # See overlord/missions/bluebuild-upgrade/findings.md.
+      # On ubuntu-latest envsubst is preinstalled, so this step is a no-op; remove it later.
       - name: Ensure envsubst is available (gettext-base)
         run: |
           if command -v envsubst >/dev/null 2>&1; then
